@@ -10,7 +10,16 @@
     tools:context="com.lcqbug.pin.pin.MainActivity">
 
     <TextView
+        android:id="@+id/tv"
+        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="点击弹v7dialog" />
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_marginLeft="150dp"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击弹自定义布局的dialog" />
 </RelativeLayout>
