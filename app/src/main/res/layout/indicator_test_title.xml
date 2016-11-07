@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110px"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:drawableLeft="@drawable/server_selector"
+        android:drawablePadding="10px"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="基本参数编程"
+        android:textColor="@color/grey_green_chang"
+        android:textSize="@dimen/font_3" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="10px"
+        android:background="@color/gray_83" />
+</LinearLayout>

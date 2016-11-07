@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+def AAVersion = '3.3.2' // change this to your desired version, for example the latest stable: 4.0.0
 
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0]?.processResources.manifestFile  //这句话sometimes cant find manifestFile,
+        //// so add resourcePackageName can solve this problem
+        resourcePackageName android.defaultConfig.applicationId
+//        resourcePackageName "com.example.administrator.annotationtest"
+    }
+}
 android {
     compileSdkVersion 23
     buildToolsVersion "24.0.0"
@@ -47,6 +58,26 @@ dependencies {
 
     // LeanCloud 应用内搜索包
     compile ('cn.leancloud.android:avoscloud-search:v3.+@aar')
+
+
+    compile 'com.android.support:cardview-v7:23.3.0'
+    compile 'com.android.support:palette-v7:23.3.0'
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'org.apache.commons:commons-lang3:3.4'
+//    compile 'org.androidannotations:androidannotations-api:3.3.2'
+//    apt "org.androidannotations:androidannotations:3.3.2"
+    compile 'commons-io:commons-io:2.5'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+//    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.zhy:autolayout:1.4.3'
+    compile 'com.shizhefei:ViewPagerIndicator:1.0.7'
+
+
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
 }
 android {
     //为了解决部分第三方库重复打包了META-INF的问题

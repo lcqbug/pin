@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Pin</string>
+    <string name="findcar">人找车</string>
+    <string name="findperson">车找人</string>
+    <string name="notice">公告</string>
+    <string name="service">服务</string>
+    <string name="about">关于</string>
+    <string name="advise">建议</string>
+    <string name="callme">联系app作者</string>
+    <string name="contribute">赞助</string>
+    <string name="cooperate">合作</string>
+    <string name="other">其他</string>
+    <string name="settings">设置</string>
+
 </resources>

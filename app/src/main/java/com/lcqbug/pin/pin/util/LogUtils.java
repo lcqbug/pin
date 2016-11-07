@@ -8,7 +8,7 @@ import android.util.Log;
  * 要求能 显示出当前 包名 类名
  * 调试的时候显示  发布的时候不显示
  */
-public class LogUtil  {
+public class LogUtils {
     private static final boolean isDebug = true;
 
     private static String packageName = Util.getApplication().getPackageName();

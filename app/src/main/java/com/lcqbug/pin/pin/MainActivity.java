@@ -1,26 +1,25 @@
 package com.lcqbug.pin.pin;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.lcqbug.pin.pin.customview.CustomDialog;
+import com.lcqbug.pin.pin.activity.BaseActivity;
+import com.lcqbug.pin.pin.activity.Tabactivity;
+import com.lcqbug.pin.pin.activity.Tabactivity_;
 import com.lcqbug.pin.pin.iterface.UIcallback;
 import com.lcqbug.pin.pin.util.DialogUtil;
-import com.lcqbug.pin.pin.util.LogUtil;
+import com.lcqbug.pin.pin.util.LogUtils;
 import com.lcqbug.pin.pin.util.Util;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     TextView textView;
     TextView tv1;
     TextView tv2;
-
+    Button btnJump;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
          textView = (TextView) findViewById(R.id.tv);
          tv1 = (TextView) findViewById(R.id.tv1);
          tv2 = (TextView) findViewById(R.id.tv2);
+        btnJump = (Button) findViewById(R.id.btn_jump);
+        btnJump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Tabactivity_.class));
+            }
+        });
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
                 DialogUtil.showDialogCustomByView(MainActivity.this,inflate, new UIcallback() {
                     @Override
                     public void clickok() {
-                        LogUtil.e("ok");
+                        LogUtils.e("ok");
                     }
 
                     @Override
                     public void clickcancel() {
-                        LogUtil.e("cancel");
+                        LogUtils.e("cancel");
                     }
                 });
             }
@@ -71,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
                 DialogUtil.showDialogCustomByid(MainActivity.this,R.layout.custom_dialog, new UIcallback() {
                     @Override
                     public void clickok() {
-                        LogUtil.e("ok");
+                        LogUtils.e("ok");
                         Util.showToast(MainActivity.this,"okokok");
                     }
 
                     @Override
                     public void clickcancel() {
-                        LogUtil.e("cancel");
+                        LogUtils.e("cancel");
                         Util.showToast(MainActivity.this,"cancel cancel");
                     }
                 });
